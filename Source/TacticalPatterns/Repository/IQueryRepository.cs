@@ -3,11 +3,13 @@
 	/// <summary>
 	/// Интерфейс репозитория запросов.
 	/// </summary>
-	public interface IQueryRepository<TBoundedContext> :
+	public interface IQueryRepository<TBoundedContext, TEntity> :
 		IRepositoryReadCount<TBoundedContext>,
-		IRepositoryReadEnumerable<TBoundedContext>,
-		IRepositoryReadQueryable<TBoundedContext>,
-		IRepositoryReadSingle<TBoundedContext>
-	{
+		IRepositoryReadEnumerable<TEntity>,
+		IRepositoryReadQueryable<TEntity>,
+		IRepositoryReadSingle<TEntity>
+        where TBoundedContext : IBoundedContext
+        where TEntity: class, IEntity
+    {
 	}
 }

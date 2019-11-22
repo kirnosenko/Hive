@@ -26,7 +26,7 @@ namespace Hive.SeedWorks.Characteristics
 
         public Guid CommandId => _commandId;
         
-        public static IComplexKey Create(Guid id, int versionNumber)
+        public static IHasComplexKey Create(Guid id, int versionNumber)
             => new ComplexKey(id, versionNumber, null);
 
         public static IHasComplexKey Create(Guid id, int versionNumber, CommandToAggregate command)

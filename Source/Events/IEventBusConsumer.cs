@@ -11,14 +11,14 @@ namespace Hive.SeedWorks.Events
         /// Подписаться на доменное событие.
         /// </summary>
         /// <typeparam name="TBoundedContext">Тип ограниченного контекста.</typeparam>
-        void Subscribe<TBoundedContext>(IDomainEventHandler<TBoundedContext> handler)
+        void Subscribe<TBoundedContext>(IDomainEvent<TBoundedContext> handler)
             where TBoundedContext : IBoundedContext;
 
         /// <summary>
         /// Отписаться от доменного события.
         /// </summary>
         /// <typeparam name="TBoundedContext">Тип ограниченного контекста.</typeparam>
-        void Unsubscribe<TBoundedContext>(IDomainEventHandler<TBoundedContext> handler)
+        void Unsubscribe<TBoundedContext>(IDomainEvent<TBoundedContext> handler)
             where TBoundedContext : IBoundedContext;
     }
 }
